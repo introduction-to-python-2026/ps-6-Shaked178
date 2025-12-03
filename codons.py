@@ -10,7 +10,7 @@ def create_codon_dict(file_path):
     codons = {}
 
     for row in rows:
-        components= row.strip().split('\t')
+        components = row.strip().split('\t')
         # row.strip().split('\t')
         codons.update({components[0] : components[1]})
         # codons.update({row[1] : row[3]})
