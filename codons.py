@@ -1,15 +1,17 @@
 def create_codon_dict(file_path):
     # Step 1
     
-    file = open(file_path, "r")
+    file = open(file_path)
     rows = file.readlines()
     file.close()
 
     # step 2
 
-    codons = {}
+    dic = {}
 
     for row in rows:
-        row.strip().split('\t')
-        codons.update({row[1] : row[3]})
-    return codons
+        cells = row.strip().split('\t')
+        codon = cells[0]
+        animo_acid = cells[2]
+        dic[codon] = animo_acid
+    return dic
